@@ -369,12 +369,13 @@
       "sleep_duration": 6.3,
       "exercise": true,
       "sleep": "02:20",
-      "wake": "08:20"
+      "wake": "08:20",
+      "weight": 65.1
     },
     "2026-07-23": {
       "sleep_end": "08:20"
     }
   },
   "memo": "",
-  "version": 1784799612521
+  "version": 1784799612522
 }
