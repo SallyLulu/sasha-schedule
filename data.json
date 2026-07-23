@@ -192,6 +192,13 @@
         "done": false,
         "expanded": false,
         "detail": ""
+      },
+      {
+        "title": "发瑞金100平房源",
+        "category": "工作",
+        "done": false,
+        "expanded": false,
+        "detail": ""
       }
     ],
     "2026-07-26": [
@@ -409,5 +416,5 @@
     }
   },
   "memo": "",
-  "version": 1784799612674
+  "version": 1784799612675
 }
