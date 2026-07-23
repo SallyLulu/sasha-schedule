@@ -23,13 +23,6 @@
         "detail": "毛绒/亚克力挂件；高级商务礼盒 3c充电宝；立牌"
       },
       {
-        "title": "发中设特价房",
-        "category": "工作",
-        "done": false,
-        "expanded": false,
-        "detail": ""
-      },
-      {
         "title": "geo发布：科创1号",
         "category": "工作",
         "done": false,
@@ -58,6 +51,13 @@
         "done": false,
         "expanded": false,
         "detail": "加小程序链接二维码"
+      },
+      {
+        "title": "发中设特价房",
+        "category": "工作",
+        "done": false,
+        "expanded": false,
+        "detail": ""
       },
       {
         "title": "周报",
@@ -409,5 +409,5 @@
     }
   },
   "memo": "",
-  "version": 1784799612673
+  "version": 1784799612674
 }
