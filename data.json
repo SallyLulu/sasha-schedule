@@ -53,18 +53,18 @@
     ],
     "2026-07-24": [
       {
-        "title": "周报",
-        "category": "工作",
-        "done": false,
-        "expanded": false,
-        "detail": ""
-      },
-      {
         "title": "发小办园圈视频",
         "category": "工作",
         "done": false,
         "expanded": false,
         "detail": "加小程序链接二维码"
+      },
+      {
+        "title": "周报",
+        "category": "工作",
+        "done": false,
+        "expanded": false,
+        "detail": ""
       },
       {
         "title": "小办表情包",
@@ -409,5 +409,5 @@
     }
   },
   "memo": "",
-  "version": 1784799612672
+  "version": 1784799612673
 }
