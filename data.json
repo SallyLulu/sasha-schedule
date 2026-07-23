@@ -23,13 +23,6 @@
         "detail": "毛绒/亚克力挂件；高级商务礼盒 3c充电宝；立牌"
       },
       {
-        "title": "geo发布：科创1号",
-        "category": "工作",
-        "done": false,
-        "expanded": false,
-        "detail": ""
-      },
-      {
         "title": "电影手账",
         "category": "手工",
         "done": false,
@@ -68,6 +61,13 @@
       },
       {
         "title": "小办表情包",
+        "category": "工作",
+        "done": false,
+        "expanded": false,
+        "detail": ""
+      },
+      {
+        "title": "geo发布：科创1号",
         "category": "工作",
         "done": false,
         "expanded": false,
@@ -416,5 +416,5 @@
     }
   },
   "memo": "",
-  "version": 1784799612676
+  "version": 1784799612678
 }
