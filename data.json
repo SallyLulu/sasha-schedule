@@ -23,18 +23,18 @@
         "detail": "毛绒/亚克力挂件；高级商务礼盒 3c充电宝；立牌"
       },
       {
-        "title": "电影手账",
-        "category": "手工",
-        "done": false,
-        "expanded": false,
-        "detail": "她们的狂想曲文本整理\n"
-      },
-      {
         "title": "18:00维修",
         "category": "生活",
         "done": true,
         "expanded": false,
         "detail": ""
+      },
+      {
+        "title": "电影手账",
+        "category": "手工",
+        "done": false,
+        "expanded": false,
+        "detail": "她们的狂想曲文本整理\n"
       }
     ],
     "2026-07-24": [
@@ -416,5 +416,5 @@
     }
   },
   "memo": "",
-  "version": 1784799612678
+  "version": 1784799612679
 }
