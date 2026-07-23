@@ -247,7 +247,7 @@
         "title": "牛津出版社绘本赏读",
         "category": "阅读",
         "done": false,
-        "expanded": false,
+        "expanded": true,
         "detail": ""
       }
     ],
@@ -408,6 +408,6 @@
       "craft": true
     }
   },
-  "memo": "文学阅读与创意表达\n——发现牛津大学出版社的童书世界\n8.8 14:00-16:00\n上海市徐汇区罗城路1000号 蒲公英儿童图书馆",
-  "version": 1784799612667
+  "memo": "",
+  "version": 1784799612669
 }
