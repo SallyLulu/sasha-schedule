@@ -369,6 +369,15 @@
         "expanded": true,
         "detail": "彩铅四季风景工作坊带书签绘\n威海路48号上海民生现代美术馆5F多媒体室"
       }
+    ],
+    "2026-07-30": [
+      {
+        "title": "10：00 陀展工作坊报名",
+        "category": "展览",
+        "done": false,
+        "expanded": false,
+        "detail": ""
+      }
     ]
   },
   "checkin": {
@@ -393,5 +402,5 @@
     }
   },
   "memo": "\n",
-  "version": 1784799612646
+  "version": 1784799612647
 }
