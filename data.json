@@ -56,7 +56,7 @@
         "title": "周报",
         "category": "工作",
         "done": false,
-        "expanded": true,
+        "expanded": false,
         "detail": ""
       },
       {
@@ -393,5 +393,5 @@
     }
   },
   "memo": "\n",
-  "version": 1784799612631
+  "version": 1784799612632
 }
