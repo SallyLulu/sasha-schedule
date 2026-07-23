@@ -370,12 +370,19 @@
       "exercise": true,
       "sleep": "02:20",
       "wake": "08:20",
-      "weight": 65.1
+      "weight": 65.1,
+      "craft": true
     },
     "2026-07-23": {
       "sleep_end": "08:20"
+    },
+    "2026-07-21": {
+      "craft": true
+    },
+    "2026-07-20": {
+      "craft": true
     }
   },
   "memo": "",
-  "version": 1784799612522
+  "version": 1784799612525
 }
