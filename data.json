@@ -46,7 +46,7 @@
       {
         "title": "18:00维修",
         "category": "生活",
-        "done": false,
+        "done": true,
         "expanded": false,
         "detail": ""
       }
@@ -376,5 +376,5 @@
     }
   },
   "memo": "",
-  "version": 1784799612520
+  "version": 1784799612521
 }
