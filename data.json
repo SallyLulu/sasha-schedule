@@ -79,7 +79,7 @@
         "title": "百度 资质 网址修改",
         "category": "工作",
         "done": false,
-        "expanded": false,
+        "expanded": true,
         "detail": ""
       },
       {
@@ -419,5 +419,5 @@
     }
   },
   "memo": "",
-  "version": 1784799612689
+  "version": 1784799612691
 }
