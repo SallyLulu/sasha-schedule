@@ -19,7 +19,7 @@
         "title": "小办文创选品",
         "category": "工作",
         "done": false,
-        "expanded": false,
+        "expanded": true,
         "detail": "毛绒/亚克力挂件；高级商务礼盒 3c充电宝；立牌"
       },
       {
@@ -416,5 +416,5 @@
     }
   },
   "memo": "",
-  "version": 1784799612681
+  "version": 1784799612683
 }
