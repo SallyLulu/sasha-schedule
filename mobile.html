@@ -6,7 +6,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<title>纱纱日程 · 移动端</title>
+<title>纱纱的日程</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 :root{
@@ -84,7 +84,7 @@ body{padding:0 0 60px}
 .week-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -12px;padding:0 12px}
 .week-wrap::-webkit-scrollbar{height:3px}
 .week-wrap::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
-.lwg{display:grid;grid-template-columns:32px repeat(7,minmax(56px,1fr));gap:2px;font-size:11px;min-width:480px}
+.lwg{display:grid;grid-template-columns:32px repeat(7,minmax(80px,1fr));gap:2px;font-size:11px;min-width:480px}
 .lwgh{padding:6px 2px;text-align:center;font-weight:600;color:var(--sub);border-bottom:1px solid var(--border);font-size:10px;background:var(--hover);border-radius:4px 4px 0 0}
 .lwgn{text-align:center;padding:6px 2px;color:var(--sub);font-size:10px;border-right:1px solid var(--border);font-weight:500}
 .lwgc{padding:3px;min-height:30px;border-bottom:1px solid #eef1f5;vertical-align:top}
@@ -122,7 +122,7 @@ body{padding:0 0 60px}
 </head>
 <body>
 <div class="hd-bar">
-<div class="hd-title">纱纱日程</div>
+<div class="hd-title">纱纱的日程</div>
 <div class="hd-sync ss-ok" id="syncStatus" onclick="showTokenModal()">已同步</div>
 </div>
 <div class="page">
@@ -175,11 +175,6 @@ body{padding:0 0 60px}
 <!-- Week -->
 <div class="st">一周日程</div>
 <div class="card">
-<div class="week-orient" id="weekNote">📱 提示：横向滑动查看一周<br><span style="font-size:11px">横屏时自动旋转 90°</span></div>
-<div class="card-hd" style="margin-bottom:8px">
-<div class="dl">本周分类</div>
-<button class="btn" id="wkTog" onclick="togWeekMode()">横屏</button>
-</div>
 <div class="wfb" id="wfb"></div>
 <div class="week-wrap"><div class="lwg" id="lwg"></div></div>
 </div>
@@ -301,7 +296,7 @@ const HOLIDAYS_2026 = {'2026-01-01':'元旦','2026-01-02':'元旦','2026-02-17':
 
 let curY = 2026, curM = 7, selD = '';
 let showAll = false, activeF = '全部', wkStart = null;
-let hExp = false, cExp = false, weekLandscape = false;
+let hExp = false, cExp = false;
 let tdFilter = '全部';
 
 function fmtD(y,m,d) { return y+'-'+(m<10?'0':'')+m+'-'+(d<10?'0':'')+d; }
@@ -483,12 +478,7 @@ function getCWD() {
 }
 function togH(){hExp=!hExp;document.getElementById('hTog').textContent=hExp?'收起 ▲':'展开整月 ▽';renH();}
 function togC(){cExp=!cExp;document.getElementById('ckTog').textContent=cExp?'收起 ▲':'展开整月 ▽';renC();}
-function togWeekMode(){
-  weekLandscape = !weekLandscape;
-  document.getElementById('wkTog').textContent = weekLandscape ? '竖屏' : '横屏';
-  document.getElementById('weekNote').style.display = weekLandscape ? 'block' : 'none';
-  renderWk();
-}
+
 function calDur(s,w){
   if(!s||!w)return'';
   var sp=s.split(':'),wp=w.split(':');
@@ -629,18 +619,11 @@ function renderWk() {
     }
   }
   grid.innerHTML=h;
-  // Landscape mode
-  if (weekLandscape) {
-    grid.style.transform = 'rotate(90deg)';
-    grid.style.transformOrigin = 'top left';
-    grid.style.width = window.innerHeight + 'px';
-    grid.style.minWidth = window.innerHeight + 'px';
-  } else {
-    grid.style.transform = '';
-    grid.style.transformOrigin = '';
-    grid.style.width = '';
-    grid.style.minWidth = '480px';
-  }
+  // Landscape mode removed by user request
+  grid.style.transform = '';
+  grid.style.transformOrigin = '';
+  grid.style.width = '';
+  grid.style.minWidth = '480px';
 }
 
 // ===== Init =====
@@ -686,7 +669,6 @@ function init() {
 }
 
 window.addEventListener('resize', function() {
-  if (weekLandscape) renderWk();
 });
 
 // Robust init: try-catch wrapped, runs on DOMContentLoaded
