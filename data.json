@@ -416,7 +416,8 @@
       "sleep_end": "08:20",
       "wake": "08:15",
       "duration": 0,
-      "exercise": true
+      "exercise": true,
+      "craft": false
     },
     "2026-07-21": {
       "craft": true
@@ -426,5 +427,5 @@
     }
   },
   "memo": "",
-  "version": 1784799612699
+  "version": 1784799612701
 }
