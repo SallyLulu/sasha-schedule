@@ -37,6 +37,8 @@ body { font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",sans-serif; 
 .cal-grid .day-cell.selected { background:var(--accent); color:#fff; }
 .cal-grid .day-cell.other-month { color:#cdd5de; cursor:default; }
 .cal-grid .day-cell.holiday { color:#b08080; }
+.cal-grid .day-cell.drag-over { background:var(--today); box-shadow:inset 0 0 0 2px var(--accent); }
+.cal-grid .day-cell.drag-over.other-month { background:#e0e6ec; box-shadow:inset 0 0 0 2px var(--accent); }
 .cal-grid .day-cell .dot { width:5px; height:5px; border-radius:50%; background:var(--accent2); position:absolute; bottom:3px; left:50%; transform:translateX(-50%); }
 .cal-grid .day-cell .dot.pending { background:#b08080; }
 .cal-grid .day-cell.today .dot,.cal-grid .day-cell.selected .dot { background:#fff; }
@@ -415,10 +417,18 @@ function renderCalendar(){
   const grid=document.getElementById('calGrid');
   const fd=new Date(currentYear,currentMonth-1,1),ld=new Date(currentYear,currentMonth,0);
   const sd=fd.getDay()||7,td=ld.getDate(),pl=new Date(currentYear,currentMonth-1,0).getDate();
+  // 上月/下月年月
+  const prevYear=currentMonth===1?currentYear-1:currentYear;
+  const prevMonth=currentMonth===1?12:currentMonth-1;
+  const nextYear=currentMonth===12?currentYear+1:currentYear;
+  const nextMonth=currentMonth===12?1:currentMonth+1;
   let h='';
   DAY_NAMES.forEach(function(n,i){h+='<div class="day-name'+(i>=5?' weekend':'')+'">'+n+'</div>';});
   const data=loadData();
-  for(let i=sd-1;i>0;i--){h+='<div class="day-cell other-month">'+(pl-i+1)+'</div>';}
+  for(let i=sd-1;i>0;i--){
+    const pds=fmtDate(prevYear,prevMonth,pl-i+1);
+    h+='<div class="day-cell other-month" data-date="'+pds+'" ondragover="dragOverCal(event)" ondragleave="dragLeaveCal(event)" ondrop="dragDropCal(event)">'+(pl-i+1)+'</div>';
+  }
   for(let d=1;d<=td;d++){
     const ds=fmtDate(currentYear,currentMonth,d);
     const isToday=ds===getTodayStr(),isSel=ds===selectedDate,isHoliday=!!HOLIDAYS_2026[ds];
@@ -428,9 +438,9 @@ function renderCalendar(){
     if(isToday)cls+=' today';if(isSel)cls+=' selected';
     if(isHoliday&&!isSel)cls+=' holiday';
     if(isWeekend&&!isSel&&!isToday&&!isHoliday)cls+=' weekend';
-    h+='<div class="'+cls+'" onclick="selectDate(\''+ds+'\')" title="'+(isHoliday?HOLIDAYS_2026[ds]:'')+'">'+d+(hasTodo?'<span class="dot'+(allDone?'':' pending')+'"></span>':'')+'</div>';
+    h+='<div class="'+cls+'" data-date="'+ds+'" onclick="selectDate(\''+ds+'\')" ondragover="dragOverCal(event)" ondragleave="dragLeaveCal(event)" ondrop="dragDropCal(event)" title="'+(isHoliday?HOLIDAYS_2026[ds]:'')+'">'+d+(hasTodo?'<span class="dot'+(allDone?'':' pending')+'"></span>':'')+'</div>';
   }
-  const rem=7-((sd-1+td)%7);if(rem<7){for(let d=1;d<=rem;d++){h+='<div class="day-cell other-month">'+d+'</div>';}}
+  const rem=7-((sd-1+td)%7);if(rem<7){for(let d=1;d<=rem;d++){const nds=fmtDate(nextYear,nextMonth,d);h+='<div class="day-cell other-month" data-date="'+nds+'" ondragover="dragOverCal(event)" ondragleave="dragLeaveCal(event)" ondrop="dragDropCal(event)">'+d+'</div>';}}
   grid.innerHTML=h;
 }
 function selectDate(ds){selectedDate=ds;const parts=ds.split('-');currentYear=parseInt(parts[0]);currentMonth=parseInt(parts[1]);showAllTodos=false;checkedTodos={};renderCalendar();renderTodos();updateWeekRange();renderWeek();renderHabitCheckin();renderHealthCheckin();}
@@ -844,7 +854,56 @@ function dragDrop(e){
     }
   }
   saveData(data);
-  
+
+  if(selectedDate===srcDate||selectedDate===targetDate){
+    checkedTodos={};
+    renderTodos();
+  }
+  renderCalendar();
+  renderWeek();
+}
+
+// ---- Drag from Week-Grid to Month Calendar ----
+function dragOverCal(e){
+  e.preventDefault();
+  e.dataTransfer.dropEffect='move';
+  const cell=e.target.closest('.day-cell');
+  if(cell)cell.classList.add('drag-over');
+}
+function dragLeaveCal(e){
+  // 只在真正离开该单元格时清除（避免子元素触发误清）
+  const cell=e.target.closest('.day-cell');
+  if(cell && (e.relatedTarget===null || !cell.contains(e.relatedTarget))){
+    cell.classList.remove('drag-over');
+  }
+}
+function dragDropCal(e){
+  e.preventDefault();
+  const cell=e.target.closest('.day-cell');
+  if(cell)cell.classList.remove('drag-over');
+  if(!dragSrc||!cell)return;
+  const targetDate=cell.dataset.date;
+  if(!targetDate)return;
+
+  const data=loadData();
+  const srcDate=dragSrc.date,srcIdx=dragSrc.idx;
+  if(!data[srcDate]||!data[srcDate][srcIdx])return;
+
+  // 不动源日期的索引：跨容器移动，源端直接 splice
+  const item=data[srcDate].splice(srcIdx,1)[0];
+  if(data[srcDate].length===0)delete data[srcDate];
+
+  // 目标日期：直接追加到末尾
+  if(!data[targetDate])data[targetDate]=[];
+  if(srcDate!==targetDate){
+    data[targetDate].push(item);
+  }else{
+    // 同一日期（拖回自己）：splice 完后 push 回去
+    data[targetDate].push(item);
+  }
+  saveData(data);
+
+  // 同步渲染：今日待办 / 月历 / 一周日历
   if(selectedDate===srcDate||selectedDate===targetDate){
     checkedTodos={};
     renderTodos();
