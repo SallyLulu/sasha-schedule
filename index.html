@@ -38,6 +38,7 @@ body { font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",sans-serif; 
 .cal-grid .day-cell.other-month { color:#cdd5de; cursor:default; }
 .cal-grid .day-cell.holiday { color:#b08080; }
 .cal-grid .day-cell .dot { width:5px; height:5px; border-radius:50%; background:var(--accent2); position:absolute; bottom:3px; left:50%; transform:translateX(-50%); }
+.cal-grid .day-cell .dot.pending { background:#b08080; }
 .cal-grid .day-cell.today .dot,.cal-grid .day-cell.selected .dot { background:#fff; }
 
 .todo-titlebar { display:flex; align-items:center; justify-content:space-between; margin-bottom:6px; }
@@ -421,13 +422,13 @@ function renderCalendar(){
   for(let d=1;d<=td;d++){
     const ds=fmtDate(currentYear,currentMonth,d);
     const isToday=ds===getTodayStr(),isSel=ds===selectedDate,isHoliday=!!HOLIDAYS_2026[ds];
-    const hasTodo=data[ds]&&data[ds].length>0;
+    const dayTodos=data[ds]||[];const hasTodo=dayTodos.length>0;const allDone=hasTodo&&dayTodos.every(function(t){return t.done;});
     const dow=new Date(currentYear,currentMonth-1,d).getDay(),isWeekend=dow===0||dow===6;
     let cls='day-cell';
     if(isToday)cls+=' today';if(isSel)cls+=' selected';
     if(isHoliday&&!isSel)cls+=' holiday';
     if(isWeekend&&!isSel&&!isToday&&!isHoliday)cls+=' weekend';
-    h+='<div class="'+cls+'" onclick="selectDate(\''+ds+'\')" title="'+(isHoliday?HOLIDAYS_2026[ds]:'')+'">'+d+(hasTodo?'<span class="dot"></span>':'')+'</div>';
+    h+='<div class="'+cls+'" onclick="selectDate(\''+ds+'\')" title="'+(isHoliday?HOLIDAYS_2026[ds]:'')+'">'+d+(hasTodo?'<span class="dot'+(allDone?'':' pending')+'"></span>':'')+'</div>';
   }
   const rem=7-((sd-1+td)%7);if(rem<7){for(let d=1;d<=rem;d++){h+='<div class="day-cell other-month">'+d+'</div>';}}
   grid.innerHTML=h;
@@ -582,7 +583,7 @@ function startEditDetail(ds,idx,el){
     renderTodos();
   }
   textarea.addEventListener('keydown',function(e){
-    if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();save();}
+    if(e.key==='Enter'&&e.ctrlKey){e.preventDefault();save();}
   });
   textarea.addEventListener('blur',function(){save();});
 }
