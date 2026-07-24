@@ -343,6 +343,7 @@ function selDay(ds) {
   var p = ds.split('-');
   curY = parseInt(p[0]); curM = parseInt(p[1]);
   showAll = false;
+  updWR(); renderWk();
   renderCal(); renderTD();
 }
 function chgM(d) {
@@ -355,6 +356,7 @@ function goT() {
   var n = new Date();
   curY = n.getFullYear(); curM = n.getMonth() + 1;
   selD = getTStr(); showAll = false;
+  updWR(); renderWk();
   renderCal(); renderTD();
 }
 
