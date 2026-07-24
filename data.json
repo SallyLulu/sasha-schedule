@@ -33,7 +33,7 @@
         "title": "电影手账",
         "category": "手工",
         "done": false,
-        "expanded": false,
+        "expanded": true,
         "detail": "她们的狂想曲文本整理\n"
       }
     ],
@@ -419,5 +419,5 @@
     }
   },
   "memo": "",
-  "version": 1784799612695
+  "version": 1784799612697
 }
