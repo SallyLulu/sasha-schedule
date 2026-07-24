@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <title>纱纱日程 · 移动端</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -332,7 +335,7 @@ function renderCal() {
     if (isS) cls += ' sel';
     else if (HOLIDAYS_2026[ds]) cls += ' hd';
     else if (dow >= 6) cls += ' we';
-    h += '<div class="' + cls + '" onclick="selD(\'' + ds + '\')">' + d;
+    h += '<div class="' + cls + '" onclick="selDay(\'' + ds + '\')">' + d;
     if (hasT) h += '<span class="dp' + (allD ? '' : ' pd') + '"></span>';
     h += '</div>';
   }
@@ -340,7 +343,7 @@ function renderCal() {
   if (rem < 7) for (var d = 1; d <= rem; d++) h += '<div class="dc om">' + d + '</div>';
   grid.innerHTML = h;
 }
-function selD(ds) {
+function selDay(ds) {
   selD = ds;
   var p = ds.split('-');
   curY = parseInt(p[0]); curM = parseInt(p[1]);
@@ -686,8 +689,26 @@ window.addEventListener('resize', function() {
   if (weekLandscape) renderWk();
 });
 
-// Run init immediately (script is at end of body, DOM is ready)
-init();
+// Robust init: try-catch wrapped, runs on DOMContentLoaded
+function safeInit() {
+  try {
+    init();
+  } catch(e) {
+    console.error('[sasha] init failed:', e);
+    // Best-effort fallback render
+    try { renderCal(); } catch(_){}
+    try { renderTD(); } catch(_){}
+    try { renH(); } catch(_){}
+    try { renC(); } catch(_){}
+    try { renderWk(); } catch(_){}
+    try { renderMemo(); } catch(_){}
+  }
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', safeInit);
+} else {
+  safeInit();
+}
 </script>
 </body>
 </html>
