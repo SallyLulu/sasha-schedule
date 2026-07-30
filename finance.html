@@ -102,8 +102,7 @@ table.tbl .sum-row td{border-top:2px solid var(--border);font-weight:700;backgro
     <div class="row3-left">
     <div class="c c1">
             <div class="cal-sels">
-        <select id="calYear" onchange="calSelectChange()"></select>
-        <select id="calMonth" onchange="calSelectChange()"></select>
+        <input type="month" id="calYM" onchange="calSelectChange()" style="border:1px solid var(--border);border-radius:6px;padding:4px 8px;font-size:13px;background:#fff;color:var(--text);outline:none;font-family:inherit">
         <button class="btn" onclick="goToday()" style="margin-left:4px">今天</button>
       </div>
       <div class="cal-grid" id="calGrid"></div>
@@ -115,10 +114,7 @@ table.tbl .sum-row td{border-top:2px solid var(--border);font-weight:700;backgro
     <div class="c" style="background:var(--card);border-radius:14px;padding:18px;box-shadow:0 1px 4px var(--shadow);display:flex;flex-direction:column">
       <div class="st" style="justify-content:space-between">
         <span>财务计划</span>
-        <span style="display:flex;align-items:center;gap:8px">
-          <span class="sub" id="planStatus" style="font-size:11px"></span>
-          <button class="btn" onclick="clearPlan()">清空</button>
-        </span>
+
       </div>
       <div class="bill-col">
         <div class="col-hd">当月总结 <button class="pl-btn" onclick="editSummary()">编辑</button></div>
@@ -133,7 +129,7 @@ table.tbl .sum-row td{border-top:2px solid var(--border);font-weight:700;backgro
         <div class="col-hd">年度总结</div>
         <textarea class="plan-ta" id="annualSummaryTA" placeholder="在这里写年度总结…" oninput="saveAnnualSummary()" style="min-height:60px"></textarea>
       </div>
-      <textarea class="plan-ta" id="planTA" oninput="autoSavePlan()" placeholder="写下你的财务计划…" style="margin-top:12px;min-height:60px"></textarea>
+
     </div>
   </div>
   
@@ -175,8 +171,7 @@ table.tbl .sum-row td{border-top:2px solid var(--border);font-weight:700;backgro
     </span>
   </div>
   <div class="sel-row">
-    <select id="mYear" onchange="renMonth()"></select>
-    <select id="mMonth" onchange="renMonth()"></select>
+    <input type="month" id="mYM" onchange="renMonth()" style="border:1px solid var(--border);border-radius:6px;padding:5px 8px;font-size:13px;background:#fff;color:var(--text);outline:none;font-family:inherit">
   </div>
       <div class="tbl-wrap">
         <table class="tbl" id="monthTable">
@@ -195,7 +190,7 @@ table.tbl .sum-row td{border-top:2px solid var(--border);font-weight:700;backgro
     </span>
   </div>
   <div class="sel-row">
-    <select id="yYear" onchange="renYear()"></select>
+    <input type="number" id="yYear" onchange="renYear()" min="2020" max="2040" value="2026" style="border:1px solid var(--border);border-radius:6px;padding:5px 8px;font-size:13px;background:#fff;color:var(--text);outline:none;font-family:inherit;width:100px">
   </div>
       <div class="tbl-wrap">
         <table class="tbl" id="yearTable">
@@ -222,7 +217,7 @@ table.tbl .sum-row td{border-top:2px solid var(--border);font-weight:700;backgro
 <script>
 // ===== Config =====
 const GITHUB_OWNER = 'SallyLulu';
-const GITHUB_REPO = 'sasha-schedule';
+const GITHUB_REPO = 'schedule';
 const DATA_FILE = 'finance_data.json';
 const STORAGE_KEY = 'sasha_finance';
 
@@ -345,26 +340,15 @@ function renderCal() {
 }
 
 function initCalSelects() {
-  var ySel = document.getElementById('calYear');
-  var mSel = document.getElementById('calMonth');
-  ySel.innerHTML = '';
-  for (var y = 2025; y <= 2030; y++) {
-    var opt = document.createElement('option');
-    opt.value = y; opt.textContent = y + '年';
-    ySel.appendChild(opt);
-  }
-  mSel.innerHTML = '';
-  for (var m = 1; m <= 12; m++) {
-    var opt = document.createElement('option');
-    opt.value = m; opt.textContent = m + '月';
-    mSel.appendChild(opt);
-  }
-  ySel.value = curY;
-  mSel.value = curM;
+  var inp = document.getElementById('calYM');
+  var ym = curY + '-' + (curM < 10 ? '0' : '') + curM;
+  inp.value = ym;
 }
 function calSelectChange() {
-  curY = parseInt(document.getElementById('calYear').value);
-  curM = parseInt(document.getElementById('calMonth').value);
+  var v = document.getElementById('calYM').value;
+  if (!v) return;
+  var p = v.split('-');
+  curY = parseInt(p[0]); curM = parseInt(p[1]);
   renderCal();
 }
 function chgM(d) {
@@ -377,8 +361,8 @@ function goToday() {
   var n = new Date();
   curY = n.getFullYear(); curM = n.getMonth() + 1;
   selDate = getTStr();
-  document.getElementById('calYear').value = curY;
-  document.getElementById('calMonth').value = curM;
+  var ym = curY + '-' + (curM < 10 ? '0' : '') + curM;
+  document.getElementById('calYM').value = ym;
   renderCal();
   renLedger();
   renMonth();
@@ -466,25 +450,16 @@ function renLedger() {
 
 // ===== Month bill =====
 function initMonthYear() {
-  var ySel = document.getElementById('mYear');
-  var mSel = document.getElementById('mMonth');
-  ySel.innerHTML = '';
-  for (var y = 2025; y <= 2030; y++) {
-    var opt = document.createElement('option');
-    opt.value = y; opt.textContent = y + '年';
-    ySel.appendChild(opt);
-  }
-  mSel.innerHTML = '';
-  for (var m = 1; m <= 12; m++) {
-    var opt = document.createElement('option');
-    opt.value = m; opt.textContent = m + '月';
-    mSel.appendChild(opt);
-  }
+  var inp = document.getElementById('mYM');
+  var ym = curY + '-' + (curM < 10 ? '0' : '') + curM;
+  inp.value = ym;
 }
 
 function renMonth() {
-  var y = parseInt(document.getElementById('mYear').value);
-  var m = parseInt(document.getElementById('mMonth').value);
+  var v = document.getElementById('mYM').value;
+  if (!v) return;
+  var p = v.split('-');
+  var y = parseInt(p[0]); var m = parseInt(p[1]);
   var data = getLedger();
   var totals = {};
 
@@ -548,8 +523,10 @@ function editSummary() {
 }
 
 function saveSummary() {
-  var y = parseInt(document.getElementById('mYear').value);
-  var m = parseInt(document.getElementById('mMonth').value);
+  var v = document.getElementById('mYM').value;
+  if (!v) return;
+  var p = v.split('-');
+  var y = parseInt(p[0]); var m = parseInt(p[1]);
   var key = getMonthKey(y, m);
   var plans = getPlans();
   plans.summary[key] = document.getElementById('summaryEdit').value;
@@ -560,8 +537,10 @@ function saveSummary() {
 }
 
 function addPlanItem() {
-  var y = parseInt(document.getElementById('mYear').value);
-  var m = parseInt(document.getElementById('mMonth').value);
+  var v = document.getElementById('mYM').value;
+  if (!v) return;
+  var p = v.split('-');
+  var y = parseInt(p[0]); var m = parseInt(p[1]);
   var key = getMonthKey(y, m);
   var plans = getPlans();
   if (!plans.planItems[key]) plans.planItems[key] = [];
@@ -625,12 +604,7 @@ function renderPlanItems(key, items) {
 
 // ===== Year bill =====
 function initYearYear() {
-  var ySel = document.getElementById('yYear');
-  for (var y = 2025; y <= 2030; y++) {
-    var opt = document.createElement('option');
-    opt.value = y; opt.textContent = y + '年';
-    ySel.appendChild(opt);
-  }
+  document.getElementById('yYear').value = curY;
 }
 
 function renYear() {
@@ -687,29 +661,8 @@ function saveAnnualSummary() {
 }
 
 // ===== Plan (Card 3 - Financial Plan) =====
-function renderPlan() {
-  var cd = getCD();
-  document.getElementById('planTA').value = cd.financePlan || '';
-}
 
-function autoSavePlan() {
-  if (window._planTimer) clearTimeout(window._planTimer);
-  window._planTimer = setTimeout(function() {
-    var cd = getCD();
-    cd.financePlan = document.getElementById('planTA').value;
-    putCD(cd);
-    document.getElementById('planStatus').textContent = '已保存 ' + new Date().toLocaleTimeString('zh-CN',{hour:'2-digit',minute:'2-digit'});
-  }, 800);
-}
 
-function clearPlan() {
-  if (!confirm('确定清空财务计划？')) return;
-  var cd = getCD();
-  cd.financePlan = '';
-  putCD(cd);
-  document.getElementById('planTA').value = '';
-  document.getElementById('planStatus').textContent = '';
-}
 
 // ===== Utils =====
 function esc(s) {
@@ -733,15 +686,14 @@ function init() {
   initYearYear();
 
   // Set month/year selectors
-  document.getElementById('mYear').value = curY;
-  document.getElementById('mMonth').value = curM;
+  var ym = curY + '-' + (curM < 10 ? '0' : '') + curM;
+  document.getElementById('mYM').value = ym;
   document.getElementById('yYear').value = curY;
 
   renderCal();
   renLedger();
   renMonth();
   renYear();
-  renderPlan();
 
   // Try load from GitHub
   loadFromGitHub().then(function(cd){
@@ -750,7 +702,7 @@ function init() {
       if (cd.version > local.version) {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(cd));
         ledgerCache = {};
-        renLedger(); renMonth(); renYear(); renderPlan();
+        renLedger(); renMonth(); renYear();
         showSync('ok', '已同步');
       } else {
         showSync('ok', '已同步');
@@ -768,10 +720,10 @@ function selDay(ds) {
   document.getElementById('ldDate').value = ds;
   var p = ds.split('-');
   curY = parseInt(p[0]); curM = parseInt(p[1]);
-  document.getElementById('calYear').value = curY;
-  document.getElementById('calMonth').value = curM;
-  document.getElementById('mYear').value = curY;
-  document.getElementById('mMonth').value = curM;
+  var ym = curY + '-' + (curM < 10 ? '0' : '') + curM;
+  document.getElementById('calYM').value = ym;
+  var ym = curY + '-' + (curM < 10 ? '0' : '') + curM;
+  document.getElementById('mYM').value = ym;
   document.getElementById('yYear').value = curY;
   renderCal();
   renLedger();
