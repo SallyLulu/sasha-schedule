@@ -18,15 +18,15 @@ body{padding:28px 36px}
 .hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
 .hd h1{font-size:26px;font-weight:700;letter-spacing:1px;color:var(--text)}
 .hd-sync{font-size:13px;padding:5px 16px;border-radius:14px;background:var(--card);color:var(--sub);box-shadow:0 1px 3px var(--shadow);cursor:pointer;border:1px solid var(--border)}
-.row3{display:flex;gap:18px;align-items:stretch;margin-bottom:18px}
-.row3-left{flex:1;display:flex;flex-direction:column;min-width:0}
-.row3-mid{flex:1.5;display:flex;flex-direction:column;min-width:0}
-.row3 .c{background:var(--card);border-radius:14px;padding:18px;box-shadow:0 1px 4px var(--shadow)}
-.row3 .c.c2{display:flex;flex-direction:column}
-.row3 .c .plan-ta{flex:1}
-.row3 .c .c2-body{flex:1;display:flex;flex-direction:column;min-height:0}
-.row3 .c .c2-body .tbl-wrap{flex:1;margin-bottom:4px}
-.row3 .c .c2-body .empty{margin:0}
+
+
+
+.c{background:var(--card);border-radius:14px;padding:18px;box-shadow:0 1px 4px var(--shadow)}
+.c.c2{display:flex;flex-direction:column}
+.c .plan-ta{flex:1}
+.c .c2-body{flex:1;display:flex;flex-direction:column;min-height:0}
+.c .c2-body .tbl-wrap{flex:1;margin-bottom:4px}
+.c .c2-body .empty{margin:0}
 
 .c4{background:var(--card);border-radius:14px;padding:18px;box-shadow:0 1px 4px var(--shadow);margin-bottom:18px}
 .st{font-size:16px;font-weight:600;margin-bottom:14px;display:flex;align-items:center;gap:8px;color:var(--text);flex-wrap:wrap}
@@ -97,8 +97,9 @@ table.tbl .sum-row td{border-top:2px solid var(--border);font-weight:700;backgro
   <div class="hd-sync" id="syncStatus" onclick="showTokenModal()">检查同步</div>
 </div>
 
-<div class="row3">
-  <div class="row3-left">
+<div class="main-row" style="display:flex;gap:18px;align-items:flex-start">
+  <div class="col-l" style="flex:1;display:flex;flex-direction:column;min-width:0">
+    <div class="row3-left">
     <div class="c c1">
             <div class="cal-sels">
         <select id="calYear" onchange="calSelectChange()"></select>
@@ -109,7 +110,37 @@ table.tbl .sum-row td{border-top:2px solid var(--border);font-weight:700;backgro
     </div>
 
   </div>
-  <div class="row3-mid">
+  
+    <div style="margin-top:18px"><div class="row4-left" style="flex:1;display:flex;flex-direction:column;min-width:0">
+    <div class="c" style="background:var(--card);border-radius:14px;padding:18px;box-shadow:0 1px 4px var(--shadow);display:flex;flex-direction:column">
+      <div class="st" style="justify-content:space-between">
+        <span>财务计划</span>
+        <span style="display:flex;align-items:center;gap:8px">
+          <span class="sub" id="planStatus" style="font-size:11px"></span>
+          <button class="btn" onclick="clearPlan()">清空</button>
+        </span>
+      </div>
+      <div class="bill-col">
+        <div class="col-hd">当月总结 <button class="pl-btn" onclick="editSummary()">编辑</button></div>
+        <div id="summaryView" style="font-size:12px;line-height:1.6;white-space:pre-wrap;cursor:pointer" onclick="editSummary()"></div>
+        <textarea class="plan-ta" id="summaryEdit" style="display:none;min-height:60px" onblur="saveSummary()" onkeydown="if(event.key==='Enter'&&event.ctrlKey)this.blur()"></textarea>
+      </div>
+      <div class="bill-col" style="margin-top:12px">
+        <div class="col-hd">下月计划 <button class="pl-btn" onclick="addPlanItem()">+ 添加</button></div>
+        <div id="planItemsList"></div>
+      </div>
+      <div class="bill-col" style="margin-top:12px">
+        <div class="col-hd">年度总结</div>
+        <textarea class="plan-ta" id="annualSummaryTA" placeholder="在这里写年度总结…" oninput="saveAnnualSummary()" style="min-height:60px"></textarea>
+      </div>
+      <textarea class="plan-ta" id="planTA" oninput="autoSavePlan()" placeholder="写下你的财务计划…" style="margin-top:12px;min-height:60px"></textarea>
+    </div>
+  </div>
+  
+  </div>
+  </div>
+  <div class="col-r" style="flex:1.5;display:flex;flex-direction:column;min-width:0">
+    <div class="row3-mid">
     <div class="c c2">
       <div class="st">每日账单 <span class="sub" id="ledgerDay"></span></div>
       <div class="c2-body">
@@ -135,33 +166,8 @@ table.tbl .sum-row td{border-top:2px solid var(--border);font-weight:700;backgro
 </div>
 
 
-<div class="row4" style="display:flex;gap:18px;align-items:stretch;margin-bottom:18px">
-  <div class="row4-left" style="flex:1;display:flex;flex-direction:column;min-width:0">
-    <div class="c" style="background:var(--card);border-radius:14px;padding:18px;box-shadow:0 1px 4px var(--shadow);display:flex;flex-direction:column">
-      <div class="st" style="justify-content:space-between">
-        <span>财务计划</span>
-        <span style="display:flex;align-items:center;gap:8px">
-          <span class="sub" id="planStatus" style="font-size:11px"></span>
-          <button class="btn" onclick="clearPlan()">清空</button>
-        </span>
-      </div>
-      <div class="bill-col">
-        <div class="col-hd">当月总结 <button class="pl-btn" onclick="editSummary()">编辑</button></div>
-        <div id="summaryView" style="font-size:12px;line-height:1.6;white-space:pre-wrap;cursor:pointer" onclick="editSummary()"></div>
-        <textarea class="plan-ta" id="summaryEdit" style="display:none;min-height:60px" onblur="saveSummary()" onkeydown="if(event.key==='Enter'&&event.ctrlKey)this.blur()"></textarea>
-      </div>
-      <div class="bill-col" style="margin-top:12px">
-        <div class="col-hd">下月计划 <button class="pl-btn" onclick="addPlanItem()">+ 添加</button></div>
-        <div id="planItemsList"></div>
-      </div>
-      <div class="bill-col" style="margin-top:12px">
-        <div class="col-hd">年度总结</div>
-        <textarea class="plan-ta" id="annualSummaryTA" placeholder="在这里写年度总结…" oninput="saveAnnualSummary()" style="min-height:60px"></textarea>
-      </div>
-      <textarea class="plan-ta" id="planTA" oninput="autoSavePlan()" placeholder="写下你的财务计划…" style="margin-top:12px;min-height:60px"></textarea>
-    </div>
-  </div>
-  <div class="row4-mid" style="flex:1.5;display:flex;flex-direction:column;min-width:0">
+
+    <div class="row4-mid" style="flex:1.5;display:flex;flex-direction:column;min-width:0">
     <div class="c" style="background:var(--card);border-radius:14px;padding:18px;box-shadow:0 1px 4px var(--shadow)">
   <div class="st">
     <span>月账单</span>
@@ -204,7 +210,9 @@ table.tbl .sum-row td{border-top:2px solid var(--border);font-weight:700;backgro
   </div>
 </div>
 
-<!-- Token Modal -->
+
+  </div>
+</div><!-- Token Modal -->
 <div id="tokenModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.2);z-index:999;align-items:center;justify-content:center" onclick="if(event.target===this)closeTokenModal()">
 <div style="background:var(--card);border-radius:12px;padding:20px;width:340px;box-shadow:0 4px 20px rgba(0,0,0,0.1)">
 <div style="font-size:15px;font-weight:600;margin-bottom:12px">设置 GitHub Token</div>
