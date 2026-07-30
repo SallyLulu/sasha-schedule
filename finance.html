@@ -28,7 +28,7 @@ body{padding:28px 36px}
 .row3 .c .c2-body .tbl-wrap{flex:1;margin-bottom:4px}
 .row3 .c .c2-body .empty{margin:0}
 
-.c4,.c5{background:var(--card);border-radius:14px;padding:18px;box-shadow:0 1px 4px var(--shadow);margin-bottom:18px}
+.c4{background:var(--card);border-radius:14px;padding:18px;box-shadow:0 1px 4px var(--shadow);margin-bottom:18px}
 .st{font-size:16px;font-weight:600;margin-bottom:14px;display:flex;align-items:center;gap:8px;color:var(--text);flex-wrap:wrap}
 .st .sub{font-size:13px;font-weight:400;color:var(--sub)}
 .st .val{font-size:15px;font-weight:600}
@@ -73,9 +73,6 @@ table.tbl .sum-row td{border-top:2px solid var(--border);font-weight:700;backgro
 .bill-col .col-hd{font-size:13px;font-weight:600;color:var(--sub);margin-bottom:6px;display:flex;align-items:center;justify-content:space-between}
 .bill-col .col-hd .pl-btn{font-size:11px;padding:2px 8px;border-radius:6px;border:1px solid var(--border);cursor:pointer;background:var(--card);color:var(--sub)}
 .bill-col .col-hd .pl-btn:active{background:var(--hover)}
-.year-body{display:flex;gap:14px;margin-bottom:8px}
-.year-left{flex:1;display:flex;flex-direction:column;min-width:0}
-.year-right{flex:1;display:flex;flex-direction:column;min-width:0}
 
 .pl-item{display:flex;align-items:center;gap:6px;padding:3px 0;font-size:13px}
 .pl-item .pl-ck{width:14px;height:14px;border-radius:50%;border:1.5px solid var(--border);cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:8px;color:transparent}
@@ -90,9 +87,7 @@ table.tbl .sum-row td{border-top:2px solid var(--border);font-weight:700;backgro
 .pl-add input:focus{border-color:var(--accent)}
 .pl-add .pl-add-btn{font-size:11px;padding:2px 8px;border-radius:4px;border:1px solid var(--border);cursor:pointer;background:var(--card);color:var(--sub)}
 .empty{text-align:center;color:var(--sub);font-size:13px;padding:24px 0}
-.annual-summary-hd{font-size:14px;font-weight:600;color:var(--sub);margin-bottom:6px;margin-top:16px}
-.annual-summary-ta{width:100%;border:1px solid var(--border);border-radius:8px;padding:8px;font-size:14px;font-family:inherit;color:var(--text);outline:none;resize:vertical;background:#fff;min-height:60px;line-height:1.6;margin-bottom:8px}
-.annual-summary-ta:focus{border-color:var(--accent)}
+
 </style>
 </head>
 <body>
@@ -159,6 +154,10 @@ table.tbl .sum-row td{border-top:2px solid var(--border);font-weight:700;backgro
         <div class="col-hd">下月计划 <button class="pl-btn" onclick="addPlanItem()">+ 添加</button></div>
         <div id="planItemsList"></div>
       </div>
+      <div class="bill-col" style="margin-top:12px">
+        <div class="col-hd">年度总结</div>
+        <textarea class="plan-ta" id="annualSummaryTA" placeholder="在这里写年度总结…" oninput="saveAnnualSummary()" style="min-height:60px"></textarea>
+      </div>
       <textarea class="plan-ta" id="planTA" oninput="autoSavePlan()" placeholder="写下你的财务计划…" style="margin-top:12px;min-height:60px"></textarea>
     </div>
   </div>
@@ -183,10 +182,7 @@ table.tbl .sum-row td{border-top:2px solid var(--border);font-weight:700;backgro
         </table>
       </div>
     </div>
-  </div>
-</div>
-
-<div class="c5">
+      <div class="c" style="background:var(--card);border-radius:14px;padding:18px;box-shadow:0 1px 4px var(--shadow);margin-top:18px">
   <div class="st">
     <span>年度账单</span>
     <span class="sub" style="font-size:12px;font-weight:400">
@@ -198,8 +194,6 @@ table.tbl .sum-row td{border-top:2px solid var(--border);font-weight:700;backgro
   <div class="sel-row">
     <select id="yYear" onchange="renYear()"></select>
   </div>
-  <div class="year-body">
-    <div class="year-left">
       <div class="tbl-wrap">
         <table class="tbl" id="yearTable">
           <thead><tr><th>分类</th><th style="text-align:right">金额(元)</th></tr></thead>
@@ -207,12 +201,7 @@ table.tbl .sum-row td{border-top:2px solid var(--border);font-weight:700;backgro
         </table>
       </div>
     </div>
-    <div class="year-right">
-      <div class="annual-summary-hd">年度总结</div>
-      <textarea class="annual-summary-ta" id="annualSummaryTA" placeholder="在这里写年度总结…" oninput="saveAnnualSummary()"></textarea>
-    </div>
   </div>
-</div>
 </div>
 
 <!-- Token Modal -->
