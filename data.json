@@ -55,18 +55,18 @@
       {
         "title": "小办文创选品",
         "category": "工作",
-        "done": false,
-        "expanded": true,
-        "detail": "便宜的礼盒组合\n灰色\n冰袖"
+        "done": true,
+        "expanded": false,
+        "detail": "毛绒/亚克力挂件；\n高级商务礼盒 3c充电宝；\n立牌 冰箱贴 摆件 折叠伞"
       }
     ],
     "2026-07-22": [
       {
         "title": "百度 资质 网址修改",
         "category": "工作",
-        "done": true,
+        "done": false,
         "expanded": true,
-        "detail": "截图了"
+        "detail": "资料已提交，等结果"
       },
       {
         "title": "本月发票报销",
@@ -108,7 +108,7 @@
       {
         "title": "冰袖定制",
         "category": "工作",
-        "done": true,
+        "done": false,
         "expanded": true,
         "detail": "采购样品待收货"
       },
@@ -170,14 +170,14 @@
       {
         "title": "10:00 速写工作坊",
         "category": "学习",
-        "done": true,
+        "done": false,
         "expanded": false,
         "detail": "10:00–13:00 写生与视觉叙事\n14:00–17:00 工作室自习"
       },
       {
         "title": "洗裤裤",
         "category": "生活",
-        "done": true,
+        "done": false,
         "expanded": false,
         "detail": ""
       }
@@ -198,55 +198,84 @@
         "detail": ""
       }
     ],
-    "2026-08-08": [
+    "2026-08-01": [
       {
-        "title": "10：00 卓大王工作室",
-        "category": "手工",
+        "title": "陀思妥耶夫斯基展",
+        "category": "展览",
         "done": false,
         "expanded": true,
-        "detail": "8.7-8.9 10：00-17：00\n徐汇区文定路208号A436"
+        "detail": "陀思妥耶夫斯基的世界 \n周家嘴路3678号上海近现代新闻出版博物馆 5F \n6.23-9.13 9点 —17点  夜场至20点\n♥ 热缩片工作坊7.30 10点预约\n♥ 同展馆还有玩具展\n♥ 17：00-18：00有导览"
       },
       {
-        "title": "11：00 飞吧领头雁",
+        "title": "13：30-15：00 拼豆",
         "category": "展览",
         "done": false,
         "expanded": false,
-        "detail": "愚园路1250号  7.2-8.30\n阿毛毛 8.8 14：00带书签名"
+        "detail": ""
       },
       {
-        "title": "14：00 纸月亮书籍装帧展",
+        "title": "18：00-19：30 热缩片",
+        "category": "展览",
+        "done": false,
+        "expanded": false,
+        "detail": ""
+      }
+    ],
+    "2026-08-08": [
+      {
+        "title": "飞吧领头雁",
+        "category": "展览",
+        "done": true,
+        "expanded": true,
+        "detail": "愚园路1250号  7.2-8.30\n阿毛毛 8.8-8.9 可带书签名"
+      },
+      {
+        "title": "纸月亮书籍装帧展",
         "category": "阅读",
         "done": false,
-        "expanded": false,
-        "detail": "松荫艺术小程序预约\n松蔭裏：上海市徐汇区武康路376号402室\n7.14-9.5 周六日11:00～17:00"
-      },
-      {
-        "title": "灵感环游记 森林童话群展",
-        "category": "展览",
-        "done": false,
-        "expanded": false,
-        "detail": "7.31-8.10 11：00-19：30\nINKANRPPM 建国西路364号"
+        "expanded": true,
+        "detail": "松荫艺术小程序预约\n松蔭裏：上海市徐汇区武康路376号402室\n7.14-9.5 周六日11:00～17:00 "
       },
       {
         "title": "牛津出版社绘本赏读",
         "category": "阅读",
         "done": false,
-        "expanded": false,
+        "expanded": true,
         "detail": "文学阅读与创意表达\n——发现牛津大学出版社的童书世界\n8.8 14:00-16:00\n上海市徐汇区罗城路1000号 蒲公英儿童图书馆"
       },
       {
-        "title": "14:30 作家地图分享会 建投书局",
+        "title": "熊选咖啡 小种书店",
+        "category": "阅读",
+        "done": false,
+        "expanded": false,
+        "detail": "安远路125号"
+      }
+    ],
+    "2026-08-15": [
+      {
+        "title": "上海书展",
         "category": "阅读",
         "done": false,
         "expanded": false,
         "detail": ""
-      },
+      }
+    ],
+    "2026-08-23": [
       {
-        "title": "寄孔网快递",
-        "category": "工作",
-        "done": true,
+        "title": "魔都手账集市",
+        "category": "手工",
+        "done": false,
         "expanded": false,
-        "detail": ""
+        "detail": "大渡河路196号 长风大悦城2F\n8.21-8.23  10：00-18：00"
+      }
+    ],
+    "2026-09-06": [
+      {
+        "title": "纸上奇遇",
+        "category": "阅读",
+        "done": false,
+        "expanded": false,
+        "detail": "PSA当代艺术博物馆 3楼\n2026.7.3–10.7  11:00–19:00\n周一闭馆"
       }
     ],
     "2026-09-25": [
@@ -346,41 +375,41 @@
         "done": true,
         "expanded": false,
         "detail": "彩铅四季风景工作坊带书签绘\n威海路48号上海民生现代美术馆5F多媒体室"
-      },
-      {
-        "title": "四季之歌",
-        "category": "阅读",
-        "done": true,
-        "expanded": false,
-        "detail": ""
       }
     ],
     "2026-07-30": [
       {
-        "title": "记账本页面",
-        "category": "生活",
-        "done": true,
+        "title": "10：00 陀展工作坊报名",
+        "category": "展览",
+        "done": false,
         "expanded": false,
         "detail": ""
       },
       {
-        "title": "服务号：半年报，楼盘，小办",
+        "title": "发瑞金100平房源",
         "category": "工作",
-        "done": true,
+        "done": false,
         "expanded": false,
         "detail": ""
       },
       {
-        "title": "小办周报",
+        "title": "发势润视频",
         "category": "工作",
-        "done": true,
+        "done": false,
         "expanded": false,
         "detail": ""
       },
       {
-        "title": "榕寓视频",
+        "title": "coze智能体和工作流",
         "category": "工作",
-        "done": true,
+        "done": false,
+        "expanded": false,
+        "detail": ""
+      },
+      {
+        "title": "B站账号发视频",
+        "category": "工作",
+        "done": false,
         "expanded": false,
         "detail": ""
       }
@@ -394,14 +423,21 @@
         "detail": "加小程序链接二维码\n折叠扇和冰袖100积分兑换"
       },
       {
-        "title": "每周展会信息整理",
+        "title": "服务号：半年报，楼盘，小办",
         "category": "工作",
-        "done": true,
+        "done": false,
         "expanded": false,
         "detail": ""
       },
       {
-        "title": "推广TDK调整（陈琳枫）",
+        "title": "发中设特价房",
+        "category": "工作",
+        "done": false,
+        "expanded": false,
+        "detail": ""
+      },
+      {
+        "title": "每周展会信息整理",
         "category": "工作",
         "done": true,
         "expanded": false,
@@ -410,124 +446,30 @@
     ],
     "2026-07-31": [
       {
-        "title": "B站账号发视频",
+        "title": "老蔡表彰会",
         "category": "工作",
-        "done": true,
+        "done": false,
+        "expanded": false,
+        "detail": ""
+      },
+      {
+        "title": "推广TDK调整（陈琳枫）",
+        "category": "工作",
+        "done": false,
+        "expanded": false,
+        "detail": ""
+      },
+      {
+        "title": "发一周资讯视频",
+        "category": "工作",
+        "done": false,
         "expanded": false,
         "detail": ""
       },
       {
         "title": "周报",
         "category": "工作",
-        "done": true,
-        "expanded": false,
-        "detail": ""
-      },
-      {
-        "title": "电影手账",
-        "category": "手工",
-        "done": true,
-        "expanded": false,
-        "detail": ""
-      },
-      {
-        "title": "洗布料",
-        "category": "手工",
-        "done": true,
-        "expanded": false,
-        "detail": ""
-      }
-    ],
-    "2026-08-30": [
-      {
-        "title": "上图东馆还书",
-        "category": "阅读",
         "done": false,
-        "expanded": true,
-        "detail": "盖字母章"
-      },
-      {
-        "title": "满月书房 偏心展",
-        "category": "展览",
-        "done": false,
-        "expanded": false,
-        "detail": "满月书房：2025 100位编辑的年度之书\n📍 上海市黄浦区思南路49号（思南公馆）\n2026.8.11—9.15｜10:00-19:00"
-      }
-    ],
-    "2026-08-04": [
-      {
-        "title": "创1 opc logo 设计",
-        "category": "工作",
-        "done": true,
-        "expanded": false,
-        "detail": ""
-      },
-      {
-        "title": "小红书专业号认证",
-        "category": "工作",
-        "done": false,
-        "expanded": true,
-        "detail": "已认证 600元待报销"
-      },
-      {
-        "title": "我逃跑了 等3本",
-        "category": "阅读",
-        "done": true,
-        "expanded": true,
-        "detail": "我逃跑了\n伦德和狗狗\n我们是朋友"
-      },
-      {
-        "title": "电影手账",
-        "category": "手工",
-        "done": true,
-        "expanded": true,
-        "detail": "亦吾亦舞写完\n隐形女士文本整理完成"
-      }
-    ],
-    "2026-08-05": [
-      {
-        "title": "地铁价格地图",
-        "category": "工作",
-        "done": true,
-        "expanded": false,
-        "detail": ""
-      },
-      {
-        "title": "发势润视频",
-        "category": "工作",
-        "done": false,
-        "expanded": false,
-        "detail": ""
-      },
-      {
-        "title": "猴子和我等2本",
-        "category": "阅读",
-        "done": true,
-        "expanded": true,
-        "detail": "猴子和我\n我们喜欢藏起来"
-      }
-    ],
-    "2026-09-12": [
-      {
-        "title": "苏博西 拿破仑",
-        "category": "展览",
-        "done": false,
-        "expanded": false,
-        "detail": "鹰徽与月桂：拿破仑与法兰西变革时代\n📅2026.7.26–10.25\n📍苏博西馆二楼国际合作厅"
-      },
-      {
-        "title": "吴文化 黄金展",
-        "category": "展览",
-        "done": false,
-        "expanded": false,
-        "detail": "26.07.22-27.01.06 \n吴文化博物馆 1F第一特展厅\n黄金 中西交流中的贵金属"
-      }
-    ],
-    "2026-08-06": [
-      {
-        "title": "发中设loft",
-        "category": "工作",
-        "done": true,
         "expanded": false,
         "detail": ""
       },
@@ -539,313 +481,23 @@
         "detail": ""
       },
       {
-        "title": "杨浦文章",
-        "category": "工作",
-        "done": false,
-        "expanded": false,
-        "detail": ""
-      },
-      {
-        "title": "老蔡表彰会",
-        "category": "工作",
-        "done": false,
-        "expanded": false,
-        "detail": ""
-      },
-      {
-        "title": "电影手账",
-        "category": "手工",
-        "done": true,
-        "expanded": true,
-        "detail": "隐形女士完成\n化石猎人1/2"
-      }
-    ],
-    "2026-08-03": [
-      {
-        "title": "小办动画",
-        "category": "工作",
-        "done": true,
-        "expanded": false,
-        "detail": ""
-      },
-      {
-        "title": "月报",
-        "category": "工作",
-        "done": true,
-        "expanded": false,
-        "detail": ""
-      },
-      {
-        "title": "U传播打款审批",
-        "category": "工作",
-        "done": false,
-        "expanded": false,
-        "detail": "5000已交票"
-      },
-      {
-        "title": "月度账单",
-        "category": "生活",
-        "done": true,
-        "expanded": false,
-        "detail": ""
-      },
-      {
-        "title": "电影手账",
-        "category": "手工",
-        "done": true,
-        "expanded": true,
-        "detail": "亦吾亦舞文字整理完成"
-      },
-      {
-        "title": "老房子",
-        "category": "阅读",
-        "done": true,
-        "expanded": false,
-        "detail": ""
-      },
-      {
-        "title": "我不喜欢水等3本",
-        "category": "阅读",
-        "done": true,
-        "expanded": true,
-        "detail": "我不喜欢水\n奥利和妈妈去郊游\n还我们帽子"
-      }
-    ],
-    "2026-08-10": [
-      {
-        "title": "10：00 市民夜校报名",
-        "category": "学习",
-        "done": false,
-        "expanded": true,
-        "detail": "陶瓷首饰课程 9.10-12.03 每周四"
-      },
-      {
-        "title": "coze智能体和工作流",
-        "category": "工作",
-        "done": false,
-        "expanded": false,
-        "detail": ""
-      },
-      {
-        "title": "发拼豆视频",
-        "category": "工作",
-        "done": false,
-        "expanded": false,
-        "detail": ""
-      },
-      {
-        "title": "荣广公众号",
-        "category": "工作",
-        "done": false,
-        "expanded": false,
-        "detail": ""
-      },
-      {
-        "title": "科创1号公众号",
-        "category": "工作",
-        "done": false,
-        "expanded": false,
-        "detail": ""
-      }
-    ],
-    "2026-08-12": [
-      {
-        "title": "上海书展",
-        "category": "阅读",
-        "done": false,
-        "expanded": true,
-        "detail": "9：00"
-      },
-      {
-        "title": "熊选咖啡 小种书店",
-        "category": "阅读",
-        "done": false,
-        "expanded": true,
-        "detail": "安远路125号"
-      }
-    ],
-    "2026-08-07": [
-      {
-        "title": "订：立秋海报",
-        "category": "工作",
-        "done": true,
-        "expanded": true,
-        "detail": ""
-      },
-      {
-        "title": "服务号：月刊和土地市场",
-        "category": "工作",
-        "done": true,
-        "expanded": false,
-        "detail": ""
-      },
-      {
-        "title": "周报",
-        "category": "工作",
-        "done": true,
-        "expanded": false,
-        "detail": ""
-      },
-      {
-        "title": "榕寓视频",
-        "category": "工作",
-        "done": true,
-        "expanded": false,
-        "detail": ""
-      },
-      {
-        "title": "地铁行情视频",
-        "category": "工作",
-        "done": true,
-        "expanded": false,
-        "detail": ""
-      }
-    ],
-    "2026-08-09": [
-      {
         "title": "工作坊绘本优化",
         "category": "学习",
         "done": false,
         "expanded": false,
         "detail": ""
-      },
+      }
+    ],
+    "2026-08-30": [
       {
-        "title": "出书拍照",
-        "category": "生活",
-        "done": false,
-        "expanded": false,
-        "detail": ""
-      },
-      {
-        "title": "做裙子",
-        "category": "手工",
+        "title": "上图东馆还书",
+        "category": "阅读",
         "done": false,
         "expanded": false,
         "detail": ""
       }
     ],
-    "2026-08-01": [
-      {
-        "title": "电影手账",
-        "category": "手工",
-        "done": true,
-        "expanded": true,
-        "detail": "她们的狂想曲"
-      },
-      {
-        "title": "四季之歌",
-        "category": "阅读",
-        "done": true,
-        "expanded": false,
-        "detail": "电子版已扫描"
-      },
-      {
-        "title": "人们",
-        "category": "阅读",
-        "done": true,
-        "expanded": false,
-        "detail": ""
-      },
-      {
-        "title": "四季",
-        "category": "阅读",
-        "done": true,
-        "expanded": false,
-        "detail": ""
-      }
-    ],
-    "2026-08-02": [
-      {
-        "title": "电影手账",
-        "category": "手工",
-        "done": true,
-        "expanded": true,
-        "detail": "追忆年华"
-      }
-    ],
-    "2026-10-29": [
-      {
-        "title": "绿色建博会",
-        "category": "工作",
-        "done": false,
-        "expanded": true,
-        "detail": "ESB上海绿色建博会\n2026.10.29-10.31 上海世博展览馆"
-      }
-    ],
-    "2026-09-05": [
-      {
-        "title": "陀思妥耶夫斯基展",
-        "category": "展览",
-        "done": false,
-        "expanded": false,
-        "detail": "陀思妥耶夫斯基的世界 \n周家嘴路3678号上海近现代新闻出版博物馆 5F \n6.23-9.13 9点 —17点  夜场至20点\n♥ 同展馆还有玩具展\n♥ 17：00-18：00有导览"
-      }
-    ],
-    "2026-08-22": [
-      {
-        "title": "魔都手账集市",
-        "category": "手工",
-        "done": false,
-        "expanded": false,
-        "detail": "大渡河路196号 长风大悦城2F\n8.21-8.23  10：00-18：00"
-      }
-    ],
-    "2026-08-16": [
-      {
-        "title": "陀展文创征集",
-        "category": "学习",
-        "done": false,
-        "expanded": false,
-        "detail": "截止日期：26.09.13"
-      },
-      {
-        "title": "本该如此征稿",
-        "category": "学习",
-        "done": false,
-        "expanded": false,
-        "detail": "征稿截止：9.10\n小红书晒出使用twelvemoons纸本的作品(每本每组至少9张)，需注明本子款式或名称， 同时@TWELVEMOONS \n展期：10月1日--10月18日"
-      }
-    ],
-    "2026-08-15": [
-      {
-        "title": "金手匠艺",
-        "category": "展览",
-        "done": false,
-        "expanded": false,
-        "detail": "8.4-10.7  小程序预约\nL’ÉCOLE 珠宝艺术中心\n淮海中路796号历峰双子别墅"
-      },
-      {
-        "title": "上海与巴黎抽象艺术展",
-        "category": "展览",
-        "done": false,
-        "expanded": false,
-        "detail": "7.30-10.18  10:00-18:00\n中华艺术宫 0米层15、16、C3展厅\n33米层 长安画派与海派绘画研究展\n49米层 美术作品中的上海"
-      },
-      {
-        "title": "平方手账快闪",
-        "category": "手工",
-        "done": false,
-        "expanded": true,
-        "detail": "前滩太古里 茑屋书店\n77.15-8.30\n印章 打卡素材包"
-      },
-      {
-        "title": "上海书展",
-        "category": "展览",
-        "done": false,
-        "expanded": true,
-        "detail": "叶露盈 11：00 木兰辞见面会\n东阳光棚中信童书 签售\n16：30-17：30 东阳光棚活动取分享"
-      }
-    ],
-    "2026-09-20": [
-      {
-        "title": "纸上奇遇",
-        "category": "阅读",
-        "done": false,
-        "expanded": false,
-        "detail": "PSA当代艺术博物馆 3楼\n2026.7.3–10.7  11:00–19:00\n周一闭馆"
-      }
-    ],
-    "2026-08-14": [
+    "2026-08-04": [
       {
         "title": "小办表情包",
         "category": "工作",
@@ -854,22 +506,54 @@
         "detail": ""
       }
     ],
-    "2026-08-11": [
+    "2026-08-02": [
       {
-        "title": "发瑞金100平房源",
-        "category": "工作",
+        "title": "本该如此征稿",
+        "category": "学习",
+        "done": false,
+        "expanded": true,
+        "detail": "征稿截止：9.10\n小红书晒出使用twelvemoons纸本的作品(每本每组至少9张)，需注明本子款式或名称， 同时@TWELVEMOONS \n展期：10月1日--10月18日"
+      },
+      {
+        "title": "陀展文创征集",
+        "category": "学习",
+        "done": false,
+        "expanded": true,
+        "detail": "截止日期：26.09.13"
+      }
+    ],
+    "2026-08-05": [
+      {
+        "title": "15：20-16：40 陀展 口袋本烫印",
+        "category": "展览",
+        "done": false,
+        "expanded": true,
+        "detail": "3f印刷工坊 8.4-8.7 开始前2日预约"
+      }
+    ],
+    "2026-09-19": [
+      {
+        "title": "金手匠艺",
+        "category": "展览",
+        "done": false,
+        "expanded": false,
+        "detail": "8.4-10.7  小程序预约\nL’ÉCOLE 珠宝艺术中心\n淮海中路796号历峰双子别墅"
+      },
+      {
+        "title": "上博美洲展",
+        "category": "展览",
         "done": false,
         "expanded": false,
         "detail": ""
       }
     ],
-    "2026-08-13": [
+    "2026-09-12": [
       {
-        "title": "19:00文学地图分享会",
-        "category": "阅读",
+        "title": "苏博西 拿破仑",
+        "category": "展览",
         "done": false,
         "expanded": true,
-        "detail": "思南文学之家 复兴中路505号"
+        "detail": "鹰徽与月桂：拿破仑与法兰西变革时代\n📅2026.7.26–10.25\n📍苏博西馆二楼国际合作厅"
       }
     ]
   },
@@ -944,6 +628,6 @@
       "wake": "08:02"
     }
   },
-  "memo": "★ 每周发公寓视频\n\n★周报\n2026.7.24-2026.7.30\n1、房源发布量2644，办办币获取16352（兑换代码获取0），消耗18033，PV等数据量28319，充值金币0。\n2、用户注册量9、用户活跃度数据360、电话量31。\n3.小红书咨询5组\n\n\n★项目中文件夹管理规则：导性文件放在根目录，根据设计需求手册生成的文件放在新建文件夹。项目过程中生成的文件生成的文件不放在根目录，新建文件夹\n\n我喜欢各种各样的味道，便利店里香肠的味道，公园里夏天的味道，舞台上汗水的味道，咖啡馆里是小蛋糕的味道，还有我最喜欢的，家的味道。\n\n《她们的狂想曲》讲述了一位被“母亲”这一神圣称谓困住的年轻女性的故事。永远长不大的“彼得·潘”式男友、刚刚出生的孩子、重复又繁重的家务……“家”和“母爱”，就这样变成了困住女主角的坚固“牢笼”。\n\n★2026.7.31-2026.8.6\n1、房源发布量2443，办办币获取17048（兑换代码获取0），消耗18331，PV等数据量27104，充值金币0。\n2、用户注册量16、用户活跃度数据349、电话量28。\n3.小红书咨询6组。",
-  "version": 1784884671012
+  "memo": "★ 每周发公寓视频\n★项目中文件夹管理规则：导性文件放在根目录，根据设计需求手册生成的文件放在新建文件夹。项目过程中生成的文件生成的文件不放在根目录，新建文件夹\n我喜欢各种各样的味道，便利店里香肠的味道，公园里夏天的味道，舞台上汗水的味道，咖啡馆里是小蛋糕的味道，还有我最喜欢的，家的味道。\n《她们的狂想曲》讲述了一位被“母亲”这一神圣称谓困住的年轻女性的故事。永远长不大的“彼得·潘”式男友、刚刚出生的孩子、重复又繁重的家务……“家”和“母爱”，就这样变成了困住女主角的坚固“牢笼”。\n",
+  "version": 1784884670430
 }
