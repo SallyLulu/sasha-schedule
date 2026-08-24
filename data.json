@@ -429,21 +429,21 @@
         "title": "上图东馆还书",
         "category": "阅读",
         "done": false,
-        "expanded": false,
+        "expanded": true,
         "detail": "盖字母章"
       },
       {
         "title": "满月书房 偏心展",
         "category": "展览",
         "done": false,
-        "expanded": false,
-        "detail": "满月书房：2025 100位编辑的年度之书\n📍 上海市黄浦区思南路49号（思南公馆）\n2026.8.11—9.15｜10:00-19:00"
+        "expanded": true,
+        "detail": "满月书房：2025 100位编辑的年度之书\n📍 上海市黄浦区思南路49号（思南公馆）\n2026.8.11—9.15｜10:00-19:00\n鲁迅文学奖展-9.9 思南时区画廊\n去辽阔处 花城&思南书局快闪"
       },
       {
         "title": "中国美协插画展",
         "category": "展览",
         "done": false,
-        "expanded": false,
+        "expanded": true,
         "detail": "风起海上\n7.30-8.30 9：00-16：30\n光复路21号 四行仓库4F"
       },
       {
@@ -525,13 +525,6 @@
         "detail": ""
       },
       {
-        "title": "geo发布：科创1号",
-        "category": "工作",
-        "done": false,
-        "expanded": false,
-        "detail": ""
-      },
-      {
         "title": "电影手账",
         "category": "手工",
         "done": true,
@@ -609,13 +602,6 @@
         "title": "鹅妈妈扫描电子档",
         "category": "学习",
         "done": true,
-        "expanded": false,
-        "detail": ""
-      },
-      {
-        "title": "发势润视频",
-        "category": "工作",
-        "done": false,
         "expanded": false,
         "detail": ""
       }
@@ -728,15 +714,15 @@
         "title": "魔都手账集市",
         "category": "手工",
         "done": true,
-        "expanded": false,
+        "expanded": true,
         "detail": "大渡河路196号 长风大悦城2F\n8.21-8.23  10：00-18：00"
       },
       {
-        "title": "出书拍照",
-        "category": "生活",
-        "done": false,
-        "expanded": false,
-        "detail": ""
+        "title": "sunny插画手账集市",
+        "category": "手工",
+        "done": true,
+        "expanded": true,
+        "detail": "虹桥南丰城8.21-8.23 10：00-20：30"
       }
     ],
     "2026-08-15": [
@@ -849,7 +835,228 @@
         "detail": ""
       }
     ],
-    "2026-08-23": [
+    "2026-08-21": [
+      {
+        "title": "服务号",
+        "category": "工作",
+        "done": true,
+        "expanded": true,
+        "detail": "土地市场，热力指数，小办报报"
+      },
+      {
+        "title": "周报",
+        "category": "工作",
+        "done": true,
+        "expanded": false,
+        "detail": ""
+      }
+    ],
+    "2026-08-20": [
+      {
+        "title": "发公积金视频",
+        "category": "工作",
+        "done": true,
+        "expanded": false,
+        "detail": ""
+      },
+      {
+        "title": "8号桥项目发房源和推广",
+        "category": "工作",
+        "done": true,
+        "expanded": true,
+        "detail": "租金5.5 可面议\n已发4个房源"
+      },
+      {
+        "title": "定制伞",
+        "category": "工作",
+        "done": false,
+        "expanded": false,
+        "detail": ""
+      }
+    ],
+    "2026-08-16": [
+      {
+        "title": "保洁和维修",
+        "category": "生活",
+        "done": true,
+        "expanded": false,
+        "detail": ""
+      }
+    ],
+    "2026-08-19": [
+      {
+        "title": "荣广公众号",
+        "category": "工作",
+        "done": true,
+        "expanded": false,
+        "detail": ""
+      },
+      {
+        "title": "科创1号公众号",
+        "category": "工作",
+        "done": true,
+        "expanded": false,
+        "detail": ""
+      },
+      {
+        "title": "七夕海报",
+        "category": "工作",
+        "done": true,
+        "expanded": false,
+        "detail": ""
+      },
+      {
+        "title": "自营照片更换",
+        "category": "工作",
+        "done": true,
+        "expanded": false,
+        "detail": ""
+      },
+      {
+        "title": "2025上海书展手账整理",
+        "category": "手工",
+        "done": true,
+        "expanded": false,
+        "detail": ""
+      }
+    ],
+    "2026-08-17": [
+      {
+        "title": "上海书展手账",
+        "category": "手工",
+        "done": true,
+        "expanded": false,
+        "detail": ""
+      }
+    ],
+    "2026-08-24": [
+      {
+        "title": "发办办自营拼贴视频",
+        "category": "工作",
+        "done": false,
+        "expanded": false,
+        "detail": ""
+      },
+      {
+        "title": "荣广官网更新",
+        "category": "工作",
+        "done": false,
+        "expanded": false,
+        "detail": ""
+      },
+      {
+        "title": "发票整理",
+        "category": "工作",
+        "done": false,
+        "expanded": true,
+        "detail": "ai发票提交，u传播发票申请"
+      },
+      {
+        "title": "科创1号opc拍摄",
+        "category": "工作",
+        "done": false,
+        "expanded": false,
+        "detail": ""
+      },
+      {
+        "title": "绿饰汇房源发布",
+        "category": "工作",
+        "done": false,
+        "expanded": false,
+        "detail": ""
+      },
+      {
+        "title": "雨伞样品购买",
+        "category": "工作",
+        "done": false,
+        "expanded": false,
+        "detail": ""
+      }
+    ],
+    "2026-08-25": [
+      {
+        "title": "杨浦文章",
+        "category": "工作",
+        "done": false,
+        "expanded": false,
+        "detail": ""
+      },
+      {
+        "title": "老蔡表彰会",
+        "category": "工作",
+        "done": false,
+        "expanded": false,
+        "detail": ""
+      },
+      {
+        "title": "发拼豆视频",
+        "category": "工作",
+        "done": false,
+        "expanded": false,
+        "detail": ""
+      },
+      {
+        "title": "榕寓视频4个",
+        "category": "工作",
+        "done": false,
+        "expanded": false,
+        "detail": ""
+      },
+      {
+        "title": "发势润视频",
+        "category": "工作",
+        "done": false,
+        "expanded": false,
+        "detail": ""
+      }
+    ],
+    "2026-08-27": [
+      {
+        "title": "coze智能体和工作流",
+        "category": "工作",
+        "done": false,
+        "expanded": false,
+        "detail": ""
+      },
+      {
+        "title": "小办表情包",
+        "category": "工作",
+        "done": false,
+        "expanded": false,
+        "detail": ""
+      }
+    ],
+    "2026-08-26": [
+      {
+        "title": "发瑞金100平房源",
+        "category": "工作",
+        "done": false,
+        "expanded": false,
+        "detail": ""
+      },
+      {
+        "title": "百度推广免费试用",
+        "category": "工作",
+        "done": false,
+        "expanded": false,
+        "detail": ""
+      },
+      {
+        "title": "geo发布：科创1号",
+        "category": "工作",
+        "done": false,
+        "expanded": false,
+        "detail": ""
+      }
+    ],
+    "2026-08-29": [
+      {
+        "title": "工作坊绘本优化",
+        "category": "学习",
+        "done": false,
+        "expanded": false,
+        "detail": ""
+      },
       {
         "title": "金手匠艺",
         "category": "展览",
@@ -893,96 +1100,11 @@
         "detail": ""
       }
     ],
-    "2026-08-17": [
+    "2026-08-28": [
       {
-        "title": "8号桥项目发房源和推广",
-        "category": "工作",
-        "done": false,
-        "expanded": true,
-        "detail": "租金5.5 可面议"
-      },
-      {
-        "title": "杨浦文章",
-        "category": "工作",
-        "done": false,
-        "expanded": false,
-        "detail": ""
-      },
-      {
-        "title": "老蔡表彰会",
-        "category": "工作",
-        "done": false,
-        "expanded": false,
-        "detail": ""
-      },
-      {
-        "title": "荣广公众号",
-        "category": "工作",
-        "done": false,
-        "expanded": false,
-        "detail": ""
-      },
-      {
-        "title": "科创1号公众号",
-        "category": "工作",
-        "done": false,
-        "expanded": false,
-        "detail": ""
-      },
-      {
-        "title": "整理后浪漫的书打卡",
-        "category": "阅读",
-        "done": false,
-        "expanded": false,
-        "detail": ""
-      }
-    ],
-    "2026-08-21": [
-      {
-        "title": "coze智能体和工作流",
-        "category": "工作",
-        "done": false,
-        "expanded": false,
-        "detail": ""
-      },
-      {
-        "title": "小办表情包",
-        "category": "工作",
-        "done": false,
-        "expanded": false,
-        "detail": ""
-      }
-    ],
-    "2026-08-18": [
-      {
-        "title": "发瑞金100平房源",
-        "category": "工作",
-        "done": false,
-        "expanded": false,
-        "detail": ""
-      },
-      {
-        "title": "发拼豆视频",
-        "category": "工作",
-        "done": false,
-        "expanded": false,
-        "detail": ""
-      }
-    ],
-    "2026-08-20": [
-      {
-        "title": "工作坊绘本优化",
-        "category": "学习",
-        "done": false,
-        "expanded": false,
-        "detail": ""
-      }
-    ],
-    "2026-08-16": [
-      {
-        "title": "保洁和维修",
+        "title": "出书拍照",
         "category": "生活",
-        "done": true,
+        "done": false,
         "expanded": false,
         "detail": ""
       }
@@ -1057,8 +1179,49 @@
       "sleep": "03:00",
       "duration": 5,
       "wake": "08:02"
+    },
+    "2026-08-20": {
+      "craft": true
+    },
+    "2026-08-19": {
+      "craft": true
+    },
+    "2026-08-17": {
+      "craft": true
+    },
+    "2026-08-09": {
+      "craft": true
+    },
+    "2026-08-06": {
+      "craft": true
+    },
+    "2026-08-04": {
+      "craft": true,
+      "reading": true
+    },
+    "2026-08-03": {
+      "craft": true,
+      "reading": true
+    },
+    "2026-08-01": {
+      "craft": true,
+      "reading": true
+    },
+    "2026-08-02": {
+      "craft": true
+    },
+    "2026-08-05": {
+      "reading": true
+    },
+    "2026-08-12": {
+      "drawing": false,
+      "reading": true
+    },
+    "2026-08-15": {
+      "drawing": false,
+      "reading": true
     }
   },
-  "memo": "★ 每周发公寓视频\n\n★周报\n2026.8.7-2026.8.13\n1、房源发布量2788，办办币获取15355（兑换代码获取0），消耗17725，PV等数据量27687，充值金币0。\n2、用户注册量9、用户活跃度数据344、电话量22。\n3.小红书咨询8组\n\n★项目中文件夹管理规则：导性文件放在根目录，根据设计需求手册生成的文件放在新建文件夹。项目过程中生成的文件生成的文件不放在根目录，新建文件夹\n\n我喜欢各种各样的味道，便利店里香肠的味道，公园里夏天的味道，舞台上汗水的味道，咖啡馆里是小蛋糕的味道，还有我最喜欢的，家的味道。\n",
-  "version": 1784884671233
+  "memo": "★ 每周发公寓视频\n\n★周报\n2026.8.14-2026.8.20\n1、房源发布量2470，办办币获取15242（兑换代码获取0），消耗16961，PV等数据量25302，充值金币0。\n2、用户注册量14、用户活跃度数据351、电话量36。\n3.小红书咨询9组，其中中设签约12平.此外有一个7月的咨询中设20平已签合同但未付款。\n\n★项目中文件夹管理规则：导性文件放在根目录，根据设计需求手册生成的文件放在新建文件夹。项目过程中生成的文件生成的文件不放在根目录，新建文件夹\n\n我喜欢各种各样的味道，便利店里香肠的味道，公园里夏天的味道，舞台上汗水的味道，咖啡馆里是小蛋糕的味道，还有我最喜欢的，家的味道。\n\n\n2024书展：唐老鸭&米奇票根，牛马印章；埃人伊人印章 书单\n2023书展：小王子书签，文字书签，牡丹亭签绘；书单",
+  "version": 1784884671824
 }
