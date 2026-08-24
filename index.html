@@ -208,6 +208,7 @@ async function loadFromGitHub() {
       headers: { 'Authorization': 'token ' + GITHUB_TOKEN }
     });
     if (resp.status === 404) return null;
+    if (resp.status === 401) { localStorage.removeItem('sasha_github_token'); return null; }
     if (!resp.ok) throw new Error('HTTP ' + resp.status);
     const info = await resp.json();
     const raw = decodeURIComponent(escape(atob(info.content.replace(/\s/g, ''))));
