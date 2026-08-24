@@ -279,8 +279,7 @@ function getCD() {
   return d;
 }
 function putCD(d) {
-  if (!d.version) d.version = 1;
-  d.version++;
+  d.version = Date.now();
   localStorage.setItem('sasha_cloud', JSON.stringify(d));
   schedSync(d);
 }
@@ -655,7 +654,7 @@ function init() {
       if (cd.version > local.version) {
         localStorage.setItem('sasha_cloud', JSON.stringify(cd));
         renderCal(); renderTD(); renderWk(); renH(); renC(); renderMemo();
-      } else if (local.version > cd.version && cd.version > 0) {
+      } else if (local.version > cd.version) {
         doSyncNow(local);
       } else {
         showSync('ok', '已同步');

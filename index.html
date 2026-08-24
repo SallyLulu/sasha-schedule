@@ -176,7 +176,7 @@ body { font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",sans-serif; 
   </div>
   <div class="right">
     <div class="card" id="memoCard">
-      <div class="memo-header"><h3>备忘录</h3><span id="syncStatus" style="font-size:10px;color:#7ea89b"></span><button class="ck-toggle" onclick="clearMemo()">清空</button></div>
+      <div class="memo-header"><h3>备忘录</h3><span id="syncStatus" style="font-size:10px;color:#7ea89b;cursor:pointer" onclick="manualSync()" title="点击同步"></span><button class="ck-toggle" onclick="clearMemo()">清空</button></div>
       <textarea id="memoText" placeholder="粘贴或输入文字…" oninput="saveMemo()"></textarea>
     </div>
   </div>
@@ -285,9 +285,32 @@ function showSyncStatus(status) {
   } else if (status === 'error') {
     el.textContent = '⚠ 同步失败';
     el.style.color = '#b08080';
+  } else if (status === 'no-token') {
+    el.textContent = '⚠ 未同步 · 点此设置';
+    el.style.color = '#b08080';
   } else {
     el.textContent = '';
   }
+}
+
+function manualSync() {
+  var t = getGitHubToken();
+  if (!t) { showSyncStatus('no-token'); return; }
+  showSyncStatus('syncing');
+  loadFromGitHub().then(function(cd) {
+    if (cd && cd.version) {
+      var local = getCloudData();
+      if (cd.version > local.version) {
+        localStorage.setItem('sasha_cloud', JSON.stringify(cd));
+        showSyncStatus('synced');
+      } else {
+        doSyncToGitHub(local);
+      }
+    } else {
+      doSyncToGitHub(getCloudData());
+    }
+    setTimeout(function(){ location.reload(); }, 600);
+  }).catch(function() { showSyncStatus('error'); });
 }
 
 // ===== 统一数据管理 =====
@@ -301,8 +324,7 @@ function getCloudData() {
 }
 
 function putCloudData(cd) {
-  if (!cd.version) cd.version = 1;
-  cd.version++;
+  cd.version = Date.now();
   localStorage.setItem('sasha_cloud', JSON.stringify(cd));
   // 同步到 GitHub
   scheduleSyncToGitHub(cd);
@@ -931,13 +953,20 @@ function init(){
         // 云端更新，覆盖本地
         localStorage.setItem('sasha_cloud', JSON.stringify(cloudData));
         console.log('Synced from GitHub (v' + cloudData.version + ')');
-      } else if (local.version > cloudData.version && cloudData.version > 0) {
+        showSyncStatus('synced');
+      } else if (local.version > cloudData.version) {
         // 本地更新，推送到云端
         scheduleSyncToGitHub(local);
+        showSyncStatus('syncing');
+      } else {
+        showSyncStatus('synced');
       }
       _cloudVersion = Math.max(cloudData.version || 0, local.version || 0);
+    } else if (!localStorage.getItem('sasha_github_token')) {
+      showSyncStatus('no-token');
+    } else {
+      showSyncStatus('synced');
     }
-    showSyncStatus('synced');
     
     // 迁移旧数据（仅首次）
     migrateOldData();
