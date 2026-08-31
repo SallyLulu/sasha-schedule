@@ -322,6 +322,13 @@ function manualSync() {
 }
 
 // ===== 统一数据管理 =====
+function isEmptyData(d) {
+  if (!d) return true;
+  if (d.schedule && Object.keys(d.schedule).length > 0) return false;
+  if (d.checkin && Object.keys(d.checkin).length > 0) return false;
+  if (d.memo && d.memo.length > 0) return false;
+  return true;
+}
 function getCloudData() {
   var cd = null;
   try { cd = JSON.parse(localStorage.getItem('sasha_cloud')); } catch(e) {}
@@ -962,7 +969,7 @@ function init(){
         localStorage.setItem('sasha_cloud', JSON.stringify(cloudData));
         console.log('Synced from GitHub (v' + cloudData.version + ')');
         showSyncStatus('synced');
-      } else if (local.version > cloudData.version) {
+      } else if (local.version > cloudData.version && !isEmptyData(local)) {
         // 本地更新，推送到云端
         scheduleSyncToGitHub(local);
         showSyncStatus('syncing');

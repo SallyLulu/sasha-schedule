@@ -276,6 +276,13 @@ async function doSyncNow(cd) {
 }
 
 // ===== 数据管理 =====
+function isEmptyData(d) {
+  if (!d) return true;
+  if (d.schedule && Object.keys(d.schedule).length > 0) return false;
+  if (d.checkin && Object.keys(d.checkin).length > 0) return false;
+  if (d.memo && d.memo.length > 0) return false;
+  return true;
+}
 function getCD() {
   var d = null; try { d = JSON.parse(localStorage.getItem('sasha_cloud')); } catch(e) {}
   if (!d || typeof d !== 'object') d = { schedule: {}, checkin: {}, memo: '', version: 1 };
@@ -657,7 +664,7 @@ function init() {
       if (cd.version > local.version) {
         localStorage.setItem('sasha_cloud', JSON.stringify(cd));
         renderCal(); renderTD(); renderWk(); renH(); renC(); renderMemo();
-      } else if (local.version > cd.version) {
+      } else if (local.version > cd.version && !isEmptyData(local)) {
         doSyncNow(local);
       } else {
         showSync('ok', '已同步');
