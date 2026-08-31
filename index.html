@@ -240,6 +240,10 @@ async function doSyncToGitHub(cloudData) {
     if (getResp.ok) {
       const info = await getResp.json();
       sha = info.sha;
+    } else if (getResp.status === 401) {
+      localStorage.removeItem('sasha_github_token');
+      showSyncStatus('no-token');
+      return;
     }
     
     const jsonStr = JSON.stringify(cloudData, null, 2);
@@ -262,6 +266,9 @@ async function doSyncToGitHub(cloudData) {
     if (putResp.ok) {
       _cloudVersion = cloudData.version || 0;
       showSyncStatus('synced');
+    } else if (putResp.status === 401) {
+      localStorage.removeItem('sasha_github_token');
+      showSyncStatus('no-token');
     } else {
       const errText = await putResp.text();
       console.warn('GitHub save failed:', errText);

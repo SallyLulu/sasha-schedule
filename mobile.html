@@ -262,6 +262,7 @@ async function doSyncNow(cd) {
     var sha = null;
     var gr = await fetch(url, { headers: { 'Authorization': 'token ' + t } });
     if (gr.ok) { var gi = await gr.json(); sha = gi.sha; }
+    else if (gr.status === 401) { localStorage.removeItem('sasha_github_token'); showSync('er', 'Token失效'); return; }
     var jsonStr = JSON.stringify(cd, null, 2);
     var content = btoa(unescape(encodeURIComponent(jsonStr)));
     var pr = await fetch(url, {
@@ -269,6 +270,7 @@ async function doSyncNow(cd) {
       body: JSON.stringify({ message: 'Sync schedule data', content: content, sha: sha, branch: 'main' })
     });
     if (pr.ok) { showSync('ok', '已同步'); _cloudVersion = cd.version || 0; }
+    else if (pr.status === 401) { localStorage.removeItem('sasha_github_token'); showSync('er', 'Token失效'); }
     else showSync('er', '同步失败');
   } catch(e) { showSync('er', '网络错误'); }
 }
