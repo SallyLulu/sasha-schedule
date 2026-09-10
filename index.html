@@ -28,6 +28,12 @@ body { font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",sans-serif; 
 .cal-nav { display:flex; gap:6px; }
 .cal-nav button { background:none; border:none; cursor:pointer; color:var(--sub); font-size:16px; padding:4px 8px; border-radius:6px; }
 .cal-nav button:hover { background:var(--hover); }
+.cal-jump { display:flex; align-items:center; gap:4px; margin-bottom:8px; }
+.cal-jump input { flex:1; min-width:0; border:1px solid var(--border); border-radius:6px; padding:4px 6px; font-size:11px; background:var(--bg); color:var(--text); outline:none; text-align:center; }
+.cal-jump input:focus { border-color:var(--accent); background:#fff; }
+.cal-jump .cj-sep { font-size:11px; color:var(--sub); }
+.cal-jump .cj-btn { font-size:11px; padding:4px 10px; border-radius:6px; border:1px solid var(--border); background:var(--card); color:var(--accent); cursor:pointer; white-space:nowrap; }
+.cal-jump .cj-btn:hover { background:var(--hover); }
 .cal-grid { display:grid; grid-template-columns:repeat(7,1fr); gap:1px; text-align:center; }
 .cal-grid .day-name { font-size:10px; color:var(--sub); padding:3px 0; font-weight:500; }
 .cal-grid .day-name.weekend { color:#9b8faa; }
@@ -136,6 +142,13 @@ body { font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",sans-serif; 
           <button onclick="goToday()" style="font-size:11px;">今天</button>
           <button onclick="changeMonth(1)">&#9654;</button>
         </div>
+      </div>
+      <div class="cal-jump">
+        <input type="number" id="jumpYear" placeholder="年份" min="1970" max="2100" onkeydown="if(event.key==='Enter')jumpToMonth()">
+        <span class="cj-sep">年</span>
+        <input type="number" id="jumpMonth" placeholder="月" min="1" max="12" onkeydown="if(event.key==='Enter')jumpToMonth()">
+        <span class="cj-sep">月</span>
+        <button class="cj-btn" onclick="jumpToMonth()">跳转</button>
       </div>
       <div class="cal-grid" id="calGrid"></div>
     </div>
@@ -482,6 +495,7 @@ function renderCalendar(){
 }
 function selectDate(ds){selectedDate=ds;const parts=ds.split('-');currentYear=parseInt(parts[0]);currentMonth=parseInt(parts[1]);showAllTodos=false;checkedTodos={};renderCalendar();renderTodos();updateWeekRange();renderWeek();renderHabitCheckin();renderHealthCheckin();}
 function changeMonth(d){currentMonth+=d;if(currentMonth<1){currentMonth=12;currentYear--;}if(currentMonth>12){currentMonth=1;currentYear++;}renderCalendar();}
+function jumpToMonth(){var y=parseInt(document.getElementById('jumpYear').value),m=parseInt(document.getElementById('jumpMonth').value);if(!y||y<1970||y>2100){alert('请输入有效年份（1970-2100）');return;}if(!m||m<1||m>12){alert('请输入有效月份（1-12）');return;}currentYear=y;currentMonth=m;var n=new Date();selectedDate=(y===n.getFullYear()&&m===n.getMonth()+1)?getTodayStr():fmtDate(y,m,1);showAllTodos=false;checkedTodos={};renderCalendar();renderTodos();updateWeekRange();renderWeek();renderHabitCheckin();renderHealthCheckin();}
 function goToday(){const n=new Date();currentYear=n.getFullYear();currentMonth=n.getMonth()+1;selectedDate=getTodayStr();showAllTodos=false;checkedTodos={};renderCalendar();renderTodos();updateWeekRange();renderWeek();}
 
 function toggleShowAll(){
@@ -960,6 +974,12 @@ function syncMemoHeight(){
 }
 
 function init(){
+  // 定位到今天：与 mobile.html 对齐，避免打开停在上月造成「数据未同步」的错觉
+  var _today = new Date();
+  currentYear = _today.getFullYear();
+  currentMonth = _today.getMonth() + 1;
+  selectedDate = getTodayStr();
+  try { document.getElementById('jumpYear').value = currentYear; document.getElementById('jumpMonth').value = currentMonth; } catch(_) {}
   // 第一次加载：尝试从 GitHub 同步数据
   loadFromGitHub().then(function(cloudData) {
     if (cloudData && cloudData.version) {
