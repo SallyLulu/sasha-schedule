@@ -1470,11 +1470,11 @@
     ],
     "2026-10-12": [
       {
-        "title": "园圈活动发布",
+        "title": "电梯广告量尺寸 定制",
         "category": "工作",
         "done": true,
         "expanded": false,
-        "detail": "科创1号，办办网订阅号"
+        "detail": ""
       },
       {
         "title": "小办报报：流向指数",
@@ -1484,11 +1484,25 @@
         "detail": ""
       },
       {
-        "title": "电梯广告量尺寸 定制",
+        "title": "重阳节海报",
         "category": "工作",
         "done": false,
         "expanded": false,
-        "detail": "新买22个广告框\n广告分尺寸印刷\n城市概念 1，2，3，8号楼"
+        "detail": "14号预设18号发布"
+      },
+      {
+        "title": "公众号：桂花",
+        "category": "工作",
+        "done": false,
+        "expanded": false,
+        "detail": ""
+      },
+      {
+        "title": "百度预算",
+        "category": "工作",
+        "done": false,
+        "expanded": false,
+        "detail": "根据本周消耗设定下周\n目前日预算600元，其中opc100元 其他词500元\n680日预算 其中opc180元，其他词500元"
       },
       {
         "title": "发小红书",
@@ -1498,25 +1512,11 @@
         "detail": "科创视频"
       },
       {
-        "title": "新年礼盒选品清单",
-        "category": "工作",
-        "done": false,
-        "expanded": false,
-        "detail": "日历，遮光眼罩，鼠标垫\n伞，数据线，帆布袋"
-      },
-      {
         "title": "手偶剧 莎多佐 法",
         "category": "展览",
         "done": false,
-        "expanded": false,
+        "expanded": true,
         "detail": "19：30 金钟广场北入口广场"
-      },
-      {
-        "title": "演出预约",
-        "category": "展览",
-        "done": false,
-        "expanded": false,
-        "detail": "关注黄浦最上海演出\n爵士演出"
       }
     ],
     "2026-09-15": [
@@ -1742,18 +1742,18 @@
         "detail": ""
       },
       {
-        "title": "公众号：桂花",
-        "category": "工作",
+        "title": "匹诺曹手账",
+        "category": "阅读",
         "done": false,
         "expanded": false,
         "detail": ""
       },
       {
-        "title": "百度预算",
+        "title": "营业执照更新",
         "category": "工作",
         "done": false,
         "expanded": false,
-        "detail": "根据本周消耗设定下周\n目前日预算600元，其中opc100元 其他词500元\n680日预算 其中opc180元，其他词500元"
+        "detail": ""
       }
     ],
     "2026-10-02": [
@@ -1769,13 +1769,6 @@
       {
         "title": "工作坊绘本优化",
         "category": "学习",
-        "done": false,
-        "expanded": false,
-        "detail": ""
-      },
-      {
-        "title": "日历定制",
-        "category": "工作",
         "done": false,
         "expanded": false,
         "detail": ""
@@ -1861,11 +1854,11 @@
     ],
     "2026-10-14": [
       {
-        "title": "重阳节海报",
-        "category": "工作",
+        "title": "戴敦邦手账",
+        "category": "阅读",
         "done": false,
-        "expanded": true,
-        "detail": "14号预设18号发布"
+        "expanded": false,
+        "detail": ""
       }
     ],
     "2026-10-17": [
@@ -1875,49 +1868,6 @@
         "done": false,
         "expanded": true,
         "detail": "10.16-10.18 10：00-19：00\n长风大悦城\n一起做手账预约\n官摊：场刊，纸袋，盖章本\n蜻蜓：任意消费铲子\n汇丰纸研所：36.9元6分钟塞纸+铲一铲"
-      }
-    ],
-    "2026-11-02": [
-      {
-        "title": "公众号年审认证",
-        "category": "工作",
-        "done": false,
-        "expanded": true,
-        "detail": "更新营业执照"
-      }
-    ],
-    "2026-10-23": [
-      {
-        "title": "戴敦邦手账",
-        "category": "阅读",
-        "done": false,
-        "expanded": false,
-        "detail": ""
-      },
-      {
-        "title": "匹诺曹手账",
-        "category": "阅读",
-        "done": false,
-        "expanded": false,
-        "detail": ""
-      }
-    ],
-    "2026-11-30": [
-      {
-        "title": "元旦圣诞电梯广告",
-        "category": "工作",
-        "done": false,
-        "expanded": false,
-        "detail": ""
-      }
-    ],
-    "2027-01-01": [
-      {
-        "title": "春节电梯海报",
-        "category": "工作",
-        "done": false,
-        "expanded": false,
-        "detail": ""
       }
     ]
   },
@@ -2034,5 +1984,5 @@
     }
   },
   "memo": "★年假已用3天，加班1D+2H\n  7.27 五一2 \n（6.2 7.16 8.10 春节1） \n★ 每2个月换一次电梯广告\n★ 每周发公寓视频\n★周报\n2026.9.18-2026.10.9\n1、房源发布量6446，办办币获取46965（兑换代码获取0），消耗50898，PV等数据量85399，充值金币300。\n2、用户注册量48、用户活跃度数据403、电话量83。\n3.小红书咨询16组。\n\n★项目中文件夹管理规则：导性文件放在根目录，根据设计需求手册生成的文件放在新建文件夹。项目过程中生成的文件生成的文件不放在根目录，新建文件夹\n\n我喜欢各种各样的味道，便利店里香肠的味道，公园里夏天的味道，舞台上汗水的味道，咖啡馆里是小蛋糕的味道，还有我最喜欢的，家的味道。\n\n\n2024书展：唐老鸭&米奇票根，牛马印章；埃人伊人印章 书单\n2023书展：小王子书签，文字书签，牡丹亭签绘；书单",
-  "version": 1791790702904
+  "version": 1791798622793
 }
